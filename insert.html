@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Barang</title>
+    <link rel="icon" type="image/png" href="images/icons/check.png"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <%
+        String namaBarang = request.getParameter("namaBarang");
+        String jumlahBarang = request.getParameter("jumlahBarang");
+        String hargaJual = request.getParameter("hargaJual");
+
+        Barang barang = new Barang(0, namaBarang, jumlahBarang, hargaJual);
+        BarangDAO barangDAO = new BarangDAO();
+        barangDAO.insertBarang(barang);
+    %>
+    <h1>Data Barang berhasil ditambahkan!</h1>
+    <p><a href="admin.html">Kembali ke Beranda</a></p>
+</body>
+</html>

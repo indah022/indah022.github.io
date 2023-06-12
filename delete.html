@@ -1,0 +1,21 @@
+<%-- 
+    Document   : delete
+    Created on : Jun 5, 2023, 7:08:20 PM
+    Author     : Dodi
+--%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="ide.BarangDAO" %>
+
+<%
+    int kodeBarang = Integer.parseInt(request.getParameter("kodeBarang"));
+    BarangDAO barangDAO = new BarangDAO();
+    boolean deleted = barangDAO.deleteBarang(kodeBarang);
+
+    if (deleted) {
+        response.sendRedirect("admin.html");
+    } else {
+        out.println("Gagal menghapus barang.");
+    }
+%>

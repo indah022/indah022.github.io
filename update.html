@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Barang</title>
+    <link rel="icon" type="image/png" href="images/icons/edit.png"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Barang Telah Diperbarui</h1>
+    <p>Kode Barang: <%= barang.getKodeBarang() %></p>
+    <p>Nama Barang: <%= barang.getNamaBarang() %></p>
+    <p>Jumlah Barang: <%= barang.getJumlahBarang() %></p>
+    <p>Harga Jual: <%= barang.getHargaJual() %></p>
+    <a href="admin.html">Kembali ke Data Barang</a>
+</body>
+</html>
